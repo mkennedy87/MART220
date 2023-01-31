@@ -5,7 +5,12 @@ function setup() {
 function draw() {
     background(0,100,0,50);
 
-    
+
+    fill(212,175,55);
+    textSize(30);
+    text("Michael Kennedy", 550, 780);
+    fill(255);
+    text("Das Burger", 20, 40);
 
     fill( 245, 222, 179 );
     arc(400, 350, 400, 200, radians(180), radians(360), CHORD);
@@ -18,4 +23,6 @@ function draw() {
 
     fill( 255, 255, 0 );
     triangle(300,370,500,370,400,430);
+
+   
 }
