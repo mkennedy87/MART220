@@ -8,9 +8,10 @@ var img1;
 var img2;
 var img3;
 
-let myFont;
+var myFont;
 
-function preload() {
+function preload()
+{
     img1 = loadImage('images/burger1.jpeg');
     img2 = loadImage('images/burger2.jpg');
     img3 = loadImage('images/burger3.jpg');
@@ -20,7 +21,6 @@ function preload() {
 
 function setup() {
     createCanvas(800,800);
-   
 }
 
 function draw() {
@@ -40,7 +40,6 @@ var cheeseSecondX = 500;
 var cheeseThirdX = 400;
 var cheeseThirdY = 430;
     background(redColor,greenColor,blueColor,alpha);
-    image(img1, 0, 0);
 
 //text
     fill(212,175,55);
