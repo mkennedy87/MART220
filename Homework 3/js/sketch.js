@@ -15,7 +15,7 @@ function preload()
     img1 = loadImage('images/burger1.jpeg');
     img2 = loadImage('images/burger2.jpg');
     img3 = loadImage('images/burger3.jpg');
-    myFont = loadFont('Oswald-VariableFont_wght.ttf');
+    myFont = loadFont('fonts/Oswald-VariableFont_wght.ttf');
 
 }
 
