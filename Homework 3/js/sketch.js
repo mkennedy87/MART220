@@ -4,11 +4,27 @@ var greenColor = random(255);
 var blueColor = random(255);
 var alpha = random(255);
 
+var img1;
+var img2;
+var img3;
+
+let myFont;
+
+function preload() {
+    img1 = loadImage('images/burger1.jpeg');
+    img2 = loadImage('images/burger2.jpg');
+    img3 = loadImage('images/burger3.jpg');
+    myFont = loadFont('Oswald-VariableFont_wght.ttf');
+
+}
+
 function setup() {
     createCanvas(800,800);
+   
 }
 
 function draw() {
+
 var x = random(-10, 10);
 var y = random(-10, 10);
 
@@ -24,9 +40,11 @@ var cheeseSecondX = 500;
 var cheeseThirdX = 400;
 var cheeseThirdY = 430;
     background(redColor,greenColor,blueColor,alpha);
+    image(img1, 0, 0);
 
 //text
     fill(212,175,55);
+    textFont(myFont);
     textSize(30);
     text("Michael Kennedy", 550, 780);
     fill(255);
