@@ -4,17 +4,25 @@ var greenColor = random(255);
 var blueColor = random(255);
 var alpha = random(255);
 
-var img1;
-var img2;
-var img3;
+//var img1;
+//var img2;
+//var img3;
+
+var counter = 0;
 
 var myFont;
 
+var person;
+var character = [];
+var idleAnimation = [];
+var i = 0;
+var dinosaurObject;
+
 function preload()
 {
-    img1 = loadImage('images/burger1.jpeg');
-    img2 = loadImage('images/burger2.jpg');
-    img3 = loadImage('images/burger3.jpg');
+    //img1 = loadImage('images/burger1.jpeg');
+    //img2 = loadImage('images/burger2.jpg');
+    //img3 = loadImage('images/burger3.jpg');
     idleAnimation = loadStrings("../images/idle.txt");
     myFont = loadFont('fonts/Oswald-VariableFont_wght.ttf');
 
@@ -22,10 +30,20 @@ function preload()
 
 function setup() {
     createCanvas(800,800);
+    //setInterval(displayCounter, 50);
+    dinosaurObject = new dinosaur(idleAnimation);
+
+    dinosaurObject.animate();{
+
+        for (var j = 0; j < idleAnimation.length; j++) {
+            person = loadImage(idleAnimation[j]);
+            character[j] = person;
+        }
+}
 }
 
 function draw() {
-
+dinosaurObject.draw(i);
 var x = random(-10, 10);
 var y = random(-10, 10);
 

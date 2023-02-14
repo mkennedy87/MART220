@@ -34,17 +34,17 @@ function setup() {
     setInterval(displayCounter, 50);
     teganObject = new tegan(idleAnimation);
 
-    teganObject.animate();
+    teganObject.animate();{
 
-   /* for (var j = 0; j < idleAnimation.length; j++) {
+    for (var j = 0; j < idleAnimation.length; j++) {
         person = loadImage(idleAnimation[j]);
         character[j] = person;
-    }*/
+    }
 
     // create instance (object) of class
-    for (var i = 0; i < 50; i++) {
-        mycircle = new MyCircle(random(10, width), random(20, height), random(5, 150)); // automatically calls constructor
-        circles[i] = mycircle;
+   // for (var i = 0; i < 50; i++) {
+     //   mycircle = new MyCircle(random(10, width), random(20, height), random(5, 150)); // automatically calls constructor
+       // circles[i] = mycircle;
     }
 }
 
@@ -97,7 +97,7 @@ function drawCounter() {
     text(counter, 450, 350);
 }
 function displayCounter() {
-    counter++;
+   // counter++;
 
     i++;
     if (i > 9) {
