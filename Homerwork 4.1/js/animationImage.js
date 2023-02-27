@@ -11,7 +11,7 @@ class animationImage {
 
     loadAnimation()
     {
-        return loadImage(this.fileName);
+        return  loadImage(this.fileName);
     }
 
     drawAnimation()
