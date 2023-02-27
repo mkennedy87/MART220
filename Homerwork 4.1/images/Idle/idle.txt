@@ -1,10 +1,10 @@
-../images/Idle__000.png
-../images/Idle__001.png
-../images/Idle__002.png
-../images/Idle__003.png
-../images/Idle__004.png
-../images/Idle__005.png
-../images/Idle__006.png
-../images/Idle__007.png
-../images/Idle__008.png
-../images/Idle__009.png
+./images/idle/Idle (1).png
+./images/idle/Idle (2).png
+./images/idle/Idle (3).png
+./images/idle/Idle (4).png
+./images/idle/Idle (5).png
+./images/idle/Idle (6).png
+./images/idle/Idle (7).png
+./images/idle/Idle (8).png
+./images/idle/Idle (9).png
+./images/idle/Idle (10).png

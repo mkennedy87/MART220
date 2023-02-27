@@ -3,7 +3,6 @@ var myAnimation;
 var animations = [];
 var i = 0;
 var idlePaths = [];
-var walkPaths = [];
 
 function preload() {
 
@@ -13,8 +12,8 @@ function preload() {
 
 function setup() {
     createCanvas(800,800);
-    for (var i = 0, i < idlePaths.length, i++) {
-        myAnimation = new animationImage(idlePaths[i], 100, 100, 200,200)
+    for (var i = 0; i < idlePaths.length; i++) {
+        myAnimation = new animationImage(idlePaths[i], 100, 100, 200,200);
         animations[i] = myAnimation;
     }
 
