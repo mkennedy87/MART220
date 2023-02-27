@@ -24,14 +24,13 @@ function setup() {
 function draw() {
 
     background(200);
-   
     animations[i].drawAnimation();
 
 }
 
 function incrementIdleIndex() {
     i++;
-    if( i >= animations.lenth){
+    if( i >= animations.length){
         i = 0;
     }
 }
