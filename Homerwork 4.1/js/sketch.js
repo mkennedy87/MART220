@@ -13,7 +13,7 @@ function preload() {
 function setup() {
     createCanvas(800,800);
     for (var i = 0; i < idlePaths.length; i++) {
-        myAnimation = new animationImage(idlePaths[i], 100, 100, 200,200);
+        myAnimation = new animationImage(idlePaths[i], 250, 200, 500, 400);
         animations[i] = myAnimation;
     }
 
@@ -23,7 +23,8 @@ function setup() {
 
 function draw() {
 
-    background(200);
+    background(255,255,75);
+    console.log(i);
     animations[i].drawAnimation();
 
 }
