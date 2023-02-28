@@ -1,12 +1,11 @@
 var myImage;
 var myAnimation;
+var myWalkAnimation;
 var animations = [];
 var walkAnimations = [];
 var i = 0;
-var j = 0;
 var idlePaths = [];
 var walkPaths = [];
-var dinoX;
 
 function preload() {
 
@@ -17,18 +16,10 @@ function preload() {
 
 function setup() {
     createCanvas(800,800);
-    dinoX = 250;
-    for (var i = 0; i < idlePaths.length; i++) {
-        myAnimation = new animationImage(idlePaths[i], dinoX, 200, 500, 400);
-        animations[i] = myAnimation;
-    }
-    for (var i = 0; i < walkPaths.length; i++) {
-        myAnimation = new animationImage(walkPaths[i], dinoX, 200, 500, 400);
-        walkAnimations[i] = myAnimation;
-    }
+ 
+    myAnimation = new animationImage(idlePaths, 250, 200, 500, 400);
+    myWalkAnimation = new animationImage(walkPaths, 250, 200, 500, 400);
 
-    setInterval(incrementIdleIndex, 50);
-    setInterval(incrementWalkIndex, 50);
 }
 
 
@@ -39,29 +30,30 @@ function draw() {
     {
         if(key == 'd')
         {
-            walkAnimations[i].drawAnimation();
+            myWalkAnimation.setCurrentFrameCount(frameCount);
+            myWalkAnimation.drawAnimation();
+            myWalkAnimation.updatePosition('forward');
+            myAnimation.updatePosition('forward');
+        }
+        else if(key == 'a')
+        {
+            myWalkAnimation.setCurrentFrameCount(frameCount);
+            myWalkAnimation.drawAnimation();
+            myWalkAnimation.updatePosition('reverse');
+            myAnimation.updatePosition('reverse');
         }
         else{
-            animations[i].drawAnimation();
+            myAnimation.updatePosition('idle');
+            myAnimation.setCurrentFrameCount(frameCount);
+            myAnimation.drawAnimation();
         }
     }
     else {
-        animations[i].drawAnimation();
+        myAnimation.setCurrentFrameCount(frameCount);
+        myAnimation.drawAnimation();
     }
    
 
 }
 
-function incrementIdleIndex() {
-    i++;
-    if( i >= animations.length){
-        i = 0;
-    }
-}
 
-function incrementWalkIndex() {
-    j++;
-    if( j >= walkAnimations.length){
-        j = 0;
-    }
-}
