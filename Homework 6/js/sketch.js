@@ -9,6 +9,9 @@ var walkPaths = [];
 var isColliding = false;
 var r1;
 var r2;
+var r1X;
+var r2X;
+var points;
 
 var backgroundSound;
 var biteSound;
@@ -28,14 +31,18 @@ function setup() {
  
     myAnimation = new animationImage(idlePaths, 350, 300, 200, 160);
     myWalkAnimation = new animationImage(walkPaths, 350, 300, 200, 160);
-    r1 = new MyRectangle(575,250,100,200);
-    r2 = new MyRectangle(100,350,150,100);
+    r1X = 575;
+    r2X = 100;
+    r1 = new MyRectangle(r1X,250,100,200);
+    r2 = new MyRectangle(r2X,350,150,100);
 }
 
 
 function draw() {
 
     background(255,255,75);
+    points = 0;
+    text("SCORE: points", 600, 50);
     r1.draw();
     r2.draw();
 
@@ -67,7 +74,7 @@ function draw() {
         myAnimation.setCurrentFrameCount(frameCount);
         myAnimation.drawAnimation();
     }
-    if(isColliding == true){
+    if(myImage > 500){
        biteSound.play();
     }
   //  if(biteSound.isPlaying()) {
