@@ -39,17 +39,20 @@ function setup() {
 
 
 function draw() {
-   
-    background(255,255,75);
     var p = 0;
     var score = p;
+    background(255,255,75);
+  
     text('SCORE: ', 600, 50);
     text(score, 650, 50);
     if(isColliding == true){
         p = p + 5;
     }
     r1.draw();
+    text('good food', 600, 350);
+    
     r2.draw();
+    text('bad food', 150, 400);
 
     
     if(keyIsPressed)
