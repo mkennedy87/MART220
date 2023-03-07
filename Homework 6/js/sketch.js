@@ -11,7 +11,8 @@ var r1;
 var r2;
 var r1X;
 var r2X;
-var points;
+let p = '0';
+
 
 var backgroundSound;
 var biteSound;
@@ -39,10 +40,13 @@ function setup() {
 
 
 function draw() {
-
+   
     background(255,255,75);
-    points = 0;
-    text("SCORE: points", 600, 50);
+    text('SCORE: ', 600, 50);
+    text(p, 650, 50);
+    if(isColliding == true){
+        p = p + 5;
+    }
     r1.draw();
     r2.draw();
 
@@ -80,7 +84,7 @@ function draw() {
   //  if(biteSound.isPlaying()) {
    //     biteSound.stop();
   //  }
- 
+   
     text(isColliding, 300,300);
   
    // text(collideRectRect(r1.getX(), r1.getY(), r1.getW(), r1.getH(),r2.getX(),
