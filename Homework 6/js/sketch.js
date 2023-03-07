@@ -17,8 +17,8 @@ function preload() {
 function setup() {
     createCanvas(800,800);
  
-    myAnimation = new animationImage(idlePaths, 250, 200, 500, 400);
-    myWalkAnimation = new animationImage(walkPaths, 250, 200, 500, 400);
+    myAnimation = new animationImage(idlePaths, 250, 200, 200, 160);
+    myWalkAnimation = new animationImage(walkPaths, 250, 200, 200, 160);
 
 }
 
@@ -26,6 +26,13 @@ function setup() {
 function draw() {
 
     background(255,255,75);
+
+    var r1 = new Rectangle(100,100,20,40);
+    var r2 = new Rectangle(100,210,30,20);
+    
+    r1.draw();
+    r2.draw();
+
     if(keyIsPressed)
     {
         if(key == 'd')
@@ -53,6 +60,7 @@ function draw() {
         myAnimation.drawAnimation();
     }
    
+    
 
 }
 

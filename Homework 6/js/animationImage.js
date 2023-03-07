@@ -62,12 +62,12 @@ class animationImage {
         this.direction = direction;
         if(direction == "forward")
         {
-            this.x += 10;
+            this.x += 2;
 
         }
         else if(direction == "reverse")
         {
-            this.x -= 10;
+            this.x -= 2;
         }
     }
 }
