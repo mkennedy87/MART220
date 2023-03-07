@@ -6,6 +6,7 @@ var walkAnimations = [];
 var i = 0;
 var idlePaths = [];
 var walkPaths = [];
+var isColliding = false;
 
 function preload() {
 
@@ -17,8 +18,8 @@ function preload() {
 function setup() {
     createCanvas(800,800);
  
-    myAnimation = new animationImage(idlePaths, 250, 200, 200, 160);
-    myWalkAnimation = new animationImage(walkPaths, 250, 200, 200, 160);
+    myAnimation = new animationImage(idlePaths, 350, 300, 200, 160);
+    myWalkAnimation = new animationImage(walkPaths, 350, 300, 200, 160);
 
 }
 
@@ -27,8 +28,10 @@ function draw() {
 
     background(255,255,75);
 
-    var r1 = new Rectangle(100,100,20,40);
-    var r2 = new Rectangle(100,210,30,20);
+    var r1 = new MyRectangle(100,250,100,200);
+    var r2 = new MyRectangle(575,350,150,100);
+
+    text(collideRectRect(r1.getX(), r1.getY(), r1.getW(), r1.getH(),r2.getX(), r2.getY(), r2.getW(), r2.getH()), 300,300);
     
     r1.draw();
     r2.draw();
@@ -39,6 +42,7 @@ function draw() {
         {
             myWalkAnimation.setCurrentFrameCount(frameCount);
             myWalkAnimation.drawAnimation();
+            isColliding = myWalkAnimation.isRectanglesColliding(r1, r2);
             myWalkAnimation.updatePosition('forward');
             myAnimation.updatePosition('forward');
         }
@@ -63,5 +67,7 @@ function draw() {
     
 
 }
+
+
 
 

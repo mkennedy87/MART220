@@ -1,4 +1,4 @@
-class Rectangle
+class MyRectangle
 {
   
   constructor(x,y,w,h)
