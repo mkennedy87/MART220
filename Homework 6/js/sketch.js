@@ -11,7 +11,6 @@ var r1;
 var r2;
 var r1X;
 var r2X;
-let p = '0';
 
 
 var backgroundSound;
@@ -42,8 +41,10 @@ function setup() {
 function draw() {
    
     background(255,255,75);
+    var p = 0;
+    var score = p;
     text('SCORE: ', 600, 50);
-    text(p, 650, 50);
+    text(score, 650, 50);
     if(isColliding == true){
         p = p + 5;
     }
