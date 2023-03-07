@@ -71,8 +71,8 @@ class animationImage {
         }
     }
 
-        isRectanglesColliding(rec2){
-            return collideRectRect(r1.getX(), r1.getY(), r1.getW(), r1.getH(),r2.getX(),
+        isRectanglesColliding(r2){
+            return collideRectRect(this.x, this.y, this.w, this.h,r2.getX(),
             r2.getY(), r2.getW(), r2.getH());
         /*var topEdge1 = this.y + this.h;
         var rightEdge1 = this.x + this.w; 

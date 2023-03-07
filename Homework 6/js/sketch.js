@@ -6,14 +6,20 @@ var walkAnimations = [];
 var i = 0;
 var idlePaths = [];
 var walkPaths = [];
+var isColliding = false;
 var r1;
 var r2;
-var isColliding = false;
+
+var backgroundSound;
+var biteSound;
 
 function preload() {
 
     idlePaths = loadStrings("./images/idle/idle.txt");
     walkPaths = loadStrings("./images/walk/walk.txt");
+    backgroundSound = loadSound('./sound/bgmusic.mp3');
+    biteSound = loadSound('./sound/bite.mp3');
+
 
 }
 
@@ -22,16 +28,18 @@ function setup() {
  
     myAnimation = new animationImage(idlePaths, 350, 300, 200, 160);
     myWalkAnimation = new animationImage(walkPaths, 350, 300, 200, 160);
-    r1 = new MyRectangle(150,250,100,200);
-    r2 = new MyRectangle(375,350,150,100);
+    r1 = new MyRectangle(575,250,100,200);
+    r2 = new MyRectangle(100,350,150,100);
 }
 
 
 function draw() {
 
     background(255,255,75);
+    r1.draw();
+    r2.draw();
+
     
-   
     if(keyIsPressed)
     {
         if(key == 'd')
@@ -59,15 +67,27 @@ function draw() {
         myAnimation.setCurrentFrameCount(frameCount);
         myAnimation.drawAnimation();
     }
-   
-    r1.draw();
-    r2.draw();
-    text(isColliding, 300, 300);
-   // text(collideRectRect(r1.getX(), r1.getY(), r1.getW(), r1.getH(),r2.getX(), r2.getY(), r2.getW(), r2.getH()), 300,300);
+    if(isColliding == true){
+       biteSound.play();
+    }
+  //  if(biteSound.isPlaying()) {
+   //     biteSound.stop();
+  //  }
+ 
+    text(isColliding, 300,300);
+  
+   // text(collideRectRect(r1.getX(), r1.getY(), r1.getW(), r1.getH(),r2.getX(),
+   // r2.getY(), r2.getW(), r2.getH()), 300,300);
 
 
 }
 
-
-
+function mousePressed() {
+   if(!backgroundSound.isPlaying()) {
+    backgroundSound.loop();
+}
+    else{
+        backgroundSound.pause();
+}
+}
 
