@@ -26,7 +26,7 @@ class animationImage {
 
     createAnimation()
 {
-    this.currentAnimation = createSprite(300, 250);
+    this.currentAnimation = createSprite(200, 150);
 }
 
 
