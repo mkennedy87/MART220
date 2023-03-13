@@ -1,5 +1,6 @@
 class animationImage {
-    constructor(fileNames, x, y, w, h) {
+
+    constructor(x, y, w, h) {
         this.x = x;
         this.y = y;
         this.w = w;
@@ -9,9 +10,11 @@ class animationImage {
         this.createAnimation();
         this.i = 0;
         this.currentFrameCount = 0;
-        this.direction  = ""; 
+        this.direction = "";
+
 
     }
+
     getX() {
         return this.x;
     }
@@ -21,30 +24,30 @@ class animationImage {
     }
 
     setCurrentFrameCount(currentFrameCount) {
+
         this.currentFrameCount = currentFrameCount;
     }
 
     createAnimation() {
-    this.currentAnimation = createSprite(300, 250);
+        this.currentAnimation = createSprite(300, 250);
+    }
+    loadAnimation(animationType, fileNames) {
+
+        this.currentAnimation.addAnimation(animationType, fileNames[0], fileNames[fileNames.length - 1]);
+
     }
 
 
+    drawAnimation(animationType) {
+        this.currentAnimation.frameDelay = 5;
+        this.currentAnimation.changeAnimation(animationType);
 
-loadAnimation(animationType,fileNames)
-{ 
-    this.currentAnimation.addAnimation(animationType,fileNames[0], fileNames[fileNames.length-1]);
-       
-}
 
-drawAnimation(animationType)
-{  
-   this.currentAnimation.frameDelay = 5; 
-   this.currentAnimation.changeAnimation(animationType);         
-}
-
+    }
 
     incrementIndex() {
-        if (this.currentFrameCount % 3 == 0) {
+
+        if (this.currentFrameCount % 5 == 0) {
             this.i++;
         }
 
@@ -53,24 +56,23 @@ drawAnimation(animationType)
         }
     }
 
-    /*updatePosition(direction)
-    {
+    updatePosition(direction) {
         this.direction = direction;
-        if(direction == "forward")
-        {
-            this.x += 2;
+        if (direction == "forward") {
+            this.x += 1;
+        }
+        else if (direction == "reverse") {
+            this.x -= 1;
 
         }
-        else if(direction == "reverse")
-        {
-            this.x -= 2;
-        }
-    }*/
-
-        isRectanglesColliding(r2){
-            
-            return collideRectRect(this.x, this.y, this.w, this.h,r2.getX(),
-            r2.getY(), r2.getW(), r2.getH());
-   
     }
+
+    isRectanglesColliding(rectangle2) {
+
+        return collideRectRect(this.x, this.y,
+            this.w, this.h, rectangle2.getX(), rectangle2.getY(),
+            rectangle2.getW(), rectangle2.getH());
+
+    }
+
 }
