@@ -23,20 +23,19 @@ function draw() {
 
     background(155);
 
-    if(kb.pressing('d'))
+    if(keyIsPressed)
+    {
+        if(key == 'd')
         {
-            myAnimation.updatePosition('forward');
             myAnimation.drawAnimation('walk');
-            
-        }
-        else if(kb.pressing('a'))
-        {
-            myAnimation.updatePosition('reverse');
-            myAnimation.drawAnimation('walk');
-            
         }
         else
         {
             myAnimation.drawAnimation('idle');
-        }   
+        }
+    }
+    else
+    {
+        myAnimation.drawAnimation('idle');
+    }  
 }

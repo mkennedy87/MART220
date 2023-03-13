@@ -24,44 +24,23 @@ class animationImage {
         this.currentFrameCount = currentFrameCount;
     }
 
-    createAnimation()
-{
-    this.currentAnimation = createSprite(200, 150);
+    createAnimation() {
+    this.currentAnimation = createSprite(300, 250);
+    }
+
+
+
+loadAnimation(animationType,fileNames)
+{ 
+    this.currentAnimation.addAnimation(animationType,fileNames[0], fileNames[fileNames.length-1]);
+       
 }
 
-
-
-loadAnimation(animationType,fileNames) {
-        
-        this.currentAnimation.addAnimation(animationType,fileNames[0], fileNames[fileNames.length-1]);
-    
-
-    }
-
-    drawAnimation(animationType) {
-        
-        this.currentAnimation.frameDelay = 5;
-        this.currentAnimation.scale = .5;
-        this.currentAnimation.changeAnimation(animationType);
-        if (animationType == 'walk' && this.direction == 'forward') {
-            this.currentAnimation.direction = 0;
-            this.currentAnimation.mirror.x = false;
-            this.currentAnimation.speed = 1;
-
-        }
-        else if (animationType == 'walk' && this.direction == 'reverse') {
-
-            this.currentAnimation.mirror.x = true;
-            this.currentAnimation.direction = 180;
-            this.currentAnimation.speed = 1;
-
-        }
-        else {
-            this.currentAnimation.velocity.x = 0;
-        }
-
-
-    }
+drawAnimation(animationType)
+{  
+   this.currentAnimation.frameDelay = 5; 
+   this.currentAnimation.changeAnimation(animationType);         
+}
 
 
     incrementIndex() {
