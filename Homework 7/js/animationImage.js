@@ -97,8 +97,13 @@ class animationImage {
        
     }
 
-   isColliding(myImage) {
+    isColliding(myImage) {
         return this.currentAnimation.collide(myImage);
     }
+
+    isColliding(MyRectangle) {
+        return this.currentAnimation.collide(MyRectangle);
+    }
+    
 
 }

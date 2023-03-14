@@ -1,8 +1,18 @@
+var i = 0;
+var myImage;
 var myAnimation;
 var myWalkAnimation;
 var idlePaths = [];
 var walkPaths = [];
 var burger;
+var burger2;
+var burger3;
+var isColliding = false;
+var rectangle1;
+var rectangleArray = [];
+var points = 0;
+var health = 0;
+
 
 function preload() {
     idlePaths = loadStrings("./images/idle/idle.txt");
@@ -16,16 +26,42 @@ function setup() {
     myAnimation.loadAnimation('walk', walkPaths);
 
     burger = createSprite(random(30,width), random(30,height),100,100, 'static');
+    burger3 = createSprite(random(30,width), random(30,height),100,100, 'static');
+    burger2 = createSprite(random(30,width), random(30,height),100,100, 'static');
+
   burger.img = "./images/burger3.png";
   burger.scale = 0.1;
-  burger.diameter = 150;
-    
+  burger.diameter = 75;
+  burger2.img = "./images/burger3.png";
+  burger2.scale = 0.1;
+  burger2.diameter = 75;
+  burger3.img = "./images/burger3.png";
+  burger3.scale = 0.1;
+  burger3.diameter = 75;
 
+  rectangle1 = createSprite(random(30,width), random(30,height),100,100, 'static');
+  rectangle1 = new MyRectangle
+  burger.scale = 0.1;
+  burger.diameter = 75;
+    
+  for(var i = 0; i < 5; i++)
+  {
+      if(i % 2 == 0)
+      {
+          rectangleArray.push(new MyRectangle(random(0,width), random(0,height), random(20,100), random(10,75), 255,0,0));
+      }
+      else
+      {
+          rectangleArray.push(new MyRectangle(random(0,width), random(0,height), random(20,100), random(10,75),0,255,0));
+          
+      }
+  }
 }
 
 function draw() {
 
     background(255,255,75);
+   
 
 
     if (kb.pressing('d')) {
@@ -57,10 +93,39 @@ function draw() {
 
   
 
+
+   /* for(var i = 0; i < rectangleArray.length; i++)
+    {
+        
+        
+        if(myAnimation.isColliding(MyRectangle))
+        {
+            if(rectangleArray[i].getG() > 0)
+            {
+                health++;
+                points++;
+            }
+            if(rectangleArray[i].getR() > 0)
+            {
+                health--;
+                points--;
+            }
+            
+            
+            rectangleArray[i] = new MyRectangle(random(0,width), random(0,height), random(20,100), random(10,75));
+        }
+    }*/
+   
     textSize(32);
-   // text(isColliding, 300,300);
-   // text("Score: " + points, 50,50);
+    text("Health: " + health, 50,100);
+    text("Score: " + points, 50,50);
+    for(var i = 0; i < rectangleArray.length; i++)
+    {
+        rectangleArray[i].draw();
+    }
+   
+
   
-    myAnimation.debug = mouseIsPressed;
+    burger.debug = mouseIsPressed;
 
 }

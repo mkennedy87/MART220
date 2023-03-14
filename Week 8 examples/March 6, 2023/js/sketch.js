@@ -24,6 +24,7 @@ function setup() {
     createCanvas(800, 800);
     myAnimation = new animationImage(idlePaths, 0, 0, 150, 150);
     myWalkAnimation = new animationImage(walkPaths, 0, 0, 150, 150);
+
     for(var i = 0; i < 40; i++)
     {
         if(i % 2 == 0)
@@ -37,8 +38,6 @@ function setup() {
         }
     }
     
-
-
   
 }
 
@@ -48,8 +47,8 @@ function draw() {
    
     if(keyIsPressed)
     {
-        if(!backgroundSound.isPlaying())
-            backgroundSound.loop();
+       // if(!backgroundSound.isPlaying())
+        //    backgroundSound.loop();
 
         if(key == 'd')
         {
@@ -113,13 +112,13 @@ function draw() {
             
             // if colliding move the object to somewhere else
             rectangleArray[i] = new MyRectangle(random(0,width), random(0,height), random(20,100), random(10,75));
-            if(!backgroundSound.isPlaying())
-              backgroundSound.play();
+            //if(!backgroundSound.isPlaying())
+            //  backgroundSound.play();
         }
     }
    
     textSize(32);
-    text(isColliding, 300,300);
+    //text(isColliding, 300,300);
     text("Score: " + points, 50,50);
     for(var i = 0; i < rectangleArray.length; i++)
     {
