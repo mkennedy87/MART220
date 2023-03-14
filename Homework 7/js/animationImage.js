@@ -50,6 +50,12 @@ class animationImage {
             this.currentAnimation.speed = 2;
 
         }
+
+        else if (animationType == 'walk' && this.direction == 'up') {
+            this.currentAnimation.direction = 270;
+            this.currentAnimation.mirror.x = false;
+            this.currentAnimation.speed = 2;}
+
         else if (animationType == 'walk' && this.direction == 'reverse') {
 
             this.currentAnimation.mirror.x = true;
@@ -57,8 +63,13 @@ class animationImage {
             this.currentAnimation.speed = 2;
 
         }
+        else if (animationType == 'walk' && this.direction == 'down') {
+            this.currentAnimation.direction = 90;
+            this.currentAnimation.mirror.x = false;
+            this.currentAnimation.speed = 2;}
         else {
             this.currentAnimation.velocity.x = 0;
+            this.currentAnimation.velocity.y = 0;
         }
 
 
