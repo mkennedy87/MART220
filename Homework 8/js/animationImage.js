@@ -5,14 +5,9 @@ class animationImage {
         this.y = y;
         this.w = w;
         this.h = h;
-        this.imageObjects = [];
         this.currentAnimation;
         this.createAnimation();
-        this.i = 0;
-        this.currentFrameCount = 0;
         this.direction = "";
-
-
     }
 
     getX() {
@@ -34,8 +29,9 @@ class animationImage {
     loadAnimation(animationType, fileNames) {
 
         this.currentAnimation.addAnimation(animationType, fileNames[0], fileNames[fileNames.length-1]);
-        this.currentAnimation.width = 200;
-        this.currentAnimation.height = 150;
+        // set the hit box
+        this.currentAnimation.width = 350;
+        this.currentAnimation.height = 350;
     }
 
 
@@ -55,7 +51,7 @@ class animationImage {
         {
 
             this.currentAnimation.direction = 270;
-            this.currentAnimation.mirror.x = false;
+           // this.currentAnimation.mirror.x = false;
             this.currentAnimation.speed = 2;
 
         }
@@ -73,7 +69,7 @@ class animationImage {
         {
 
             this.currentAnimation.direction = 90;
-            this.currentAnimation.mirror.x = false;
+           // this.currentAnimation.mirror.x = false;
             this.currentAnimation.speed = 2;
 
         }
@@ -83,6 +79,8 @@ class animationImage {
 
             this.currentAnimation.velocity.x = 0;
             this.currentAnimation.velocity.y = 0;
+            this.currentAnimation.velocity.w = 0;
+            this.currentAnimation.velocity.h = 0;
 
         }
 
@@ -97,12 +95,17 @@ class animationImage {
        
     }
 
-    isColliding(myImage) {
+    isColliding(myImage) 
+    {
+
         return this.currentAnimation.collide(myImage);
     }
 
-    isColliding(MyRectangle) {
+    isColliding(MyRectangle)
+    {
+
         return this.currentAnimation.collide(MyRectangle);
+
     }
     
 
