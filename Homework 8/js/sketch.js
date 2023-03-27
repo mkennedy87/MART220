@@ -1,4 +1,4 @@
-var i = 0;
+const particles = [];
 var myImage;
 var myAnimation;
 var myWalkAnimation;
@@ -44,7 +44,7 @@ function setup() {
   burger.scale = 0.1;
   burger.diameter = 75;
     
-  for(var i = 0; i < 5; i++)
+  for(let i = 0; i < 5; i++)
   {
       if(i % 2 == 0)
       {
@@ -62,6 +62,18 @@ function draw() {
 
     background(255,255,75);
    
+    for (let i = 0; i < 10; i++) {
+        let p = new Particle();
+        particles.push(p);
+      }
+      for (let i = particles.length - 1; i >= 0; i--) {
+        particles[i].update();
+        particles[i].show();
+        if (particles[i].finished()) {
+          // remove this particle
+          particles.splice(i, 1);
+        }
+      }
 
 
     if (kb.pressing('d')) {
@@ -115,15 +127,15 @@ function draw() {
             rectangleArray[i] = new MyRectangle(random(0,width), random(0,height), random(20,100), random(10,75));
         }
     }*/
-   
+
     textSize(32);
     text("Health: " + health, 50,100);
     text("Score: " + points, 50,50);
-    for(var i = 0; i < rectangleArray.length; i++)
+    for(let i = 0; i < rectangleArray.length; i++)
     {
         rectangleArray[i].draw();
     }
-   
+
 
   
     burger.debug = mouseIsPressed;
