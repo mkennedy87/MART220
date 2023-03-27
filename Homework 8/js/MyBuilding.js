@@ -1,18 +1,22 @@
 class MyBuilding {
-    constructor(x, y, w, h) {
+    constructor(path, x, y)
+    {
+        this.path = path;
         this.x = x;
         this.y = y;
-        this.w = w;
-        this.h = h;
     }
 
-    getX() {
+    getImage()
+    {
+        var myImage = loadImage(this.path);
+        return myImage;
+    }
+    getX()
+    {
         return this.x;
     }
-
-    setX(x) {
-        this.x = x;
+    getY()
+    {
+        return this.y;
     }
-
-    loadImage()
 }

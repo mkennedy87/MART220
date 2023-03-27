@@ -17,6 +17,7 @@ var health = 0;
 function preload() {
     idlePaths = loadStrings("./images/idle/idle.txt");
     walkPaths = loadStrings("./images/walk/walk.txt");
+    attackPaths = loadStrings("./images/walk/walk.txt");
 }
 
 function setup() {
@@ -24,25 +25,26 @@ function setup() {
     myAnimation = new animationImage(0, 0, 200, 150);
     myAnimation.loadAnimation('idle', idlePaths);
     myAnimation.loadAnimation('walk', walkPaths);
+    myAnimation.loadAnimation('attack', attackPaths);
 
-    burger = createSprite(random(30,width), random(30,height),100,100, 'static');
-    burger3 = createSprite(random(30,width), random(30,height),100,100, 'static');
-    burger2 = createSprite(random(30,width), random(30,height),100,100, 'static');
+    burger = createSprite(random(30,width - 30), random(30,height - 30),300,300, 'static');
+    burger3 = createSprite(random(30,width -30), random(30,height - 30),300,300, 'static');
+    burger2 = createSprite(random(30,width -30), random(30,height -30),300,300, 'static');
 
-  burger.img = "./images/burger3.png";
-  burger.scale = 0.1;
-  burger.diameter = 75;
-  burger2.img = "./images/burger3.png";
-  burger2.scale = 0.1;
-  burger2.diameter = 75;
-  burger3.img = "./images/burger3.png";
-  burger3.scale = 0.1;
-  burger3.diameter = 75;
+  burger.img = "./images/building.png";
+  burger.scale = 0.3;
+  //burger.diameter = 75;
+  burger2.img = "./images/building.png";
+  burger2.scale = 0.3;
+ // burger2.diameter = 75;
+  burger3.img = "./images/building.png";
+  burger3.scale = 0.3;
+ // burger3.diameter = 75;
 
   //rectangle1 = createSprite(random(30,width), random(30,height),100, 100, 'static');
   rectangle1 = new MyRectangle
-  burger.scale = 0.1;
-  burger.diameter = 75;
+  //burger.scale = 0.1;
+  //burger.diameter = 75;
     
   for(let i = 0; i < 3; i++)
   {
@@ -102,6 +104,9 @@ function draw() {
     else if (kb.pressing('s')) {
         myAnimation.updatePosition('down');
         myAnimation.drawAnimation('walk');
+    }
+    else if (kb.pressing('x')) {
+        myAnimation.drawAnimation('attack');
     }
     else {
         myAnimation.drawAnimation('idle');
