@@ -1,7 +1,7 @@
 class MyRectangle
 {
   
-  constructor(x,y,w,h, r, g,b)
+  constructor(x, y, w, h, r, g, b)
   {
     this.x = x;
     this.y = y;

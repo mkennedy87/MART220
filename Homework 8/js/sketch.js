@@ -39,20 +39,20 @@ function setup() {
   burger3.scale = 0.1;
   burger3.diameter = 75;
 
-  rectangle1 = createSprite(random(30,width), random(30,height),100,100, 'static');
+  rectangle1 = createSprite(random(30,width), random(30,height),100, 100, 'static');
   rectangle1 = new MyRectangle
   burger.scale = 0.1;
   burger.diameter = 75;
     
-  for(let i = 0; i < 5; i++)
+  for(let i = 0; i < 2; i++)
   {
       if(i % 2 == 0)
       {
-          rectangleArray.push(new MyRectangle(random(0,width), random(0,height), random(20,100), random(10,75), 255,0,0));
+          rectangleArray.push(new MyRectangle(random(30,width - 30), random(30,height - 30), random(20,100), random(10,75), 255,0,0));
       }
       else
       {
-          rectangleArray.push(new MyRectangle(random(0,width), random(0,height), random(20,100), random(10,75),0,255,0));
+          rectangleArray.push(new MyRectangle(random(30,width - 30), random(30,height - 30), random(20,100), random(10,75),0,255,0));
           
       }
   }
