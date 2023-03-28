@@ -26,6 +26,11 @@ class animationImage {
     createAnimation() {
         this.currentAnimation = createSprite(350, 350);
     }
+
+    getCurrentAnimation()
+    {
+        return this.currentAnimation;
+    }
     loadAnimation(animationType, fileNames) {
 
         this.currentAnimation.addAnimation(animationType, fileNames[0], fileNames[fileNames.length-1]);
@@ -79,8 +84,6 @@ class animationImage {
 
             this.currentAnimation.velocity.x = 0;
             this.currentAnimation.velocity.y = 0;
-            this.currentAnimation.velocity.w = 0;
-            this.currentAnimation.velocity.h = 0;
 
         }
 
