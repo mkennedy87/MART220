@@ -27,6 +27,7 @@ function setup() {
     translate(200,-250,0);
     rotateZ(frameCount * .03);
     rotateX(frameCount * .015);
+    noStroke()
     cone(50,150);
     pop();
    
@@ -36,6 +37,7 @@ function setup() {
     translate(50,0,0);
     rotateY(frameCount * .02);
     rotateZ(frameCount * .01);
+    noStroke();
     cylinder();
     pop();
 
