@@ -1,4 +1,4 @@
-class imageclass{
+class MyImage{
 
     constructor(path, x, y)
     {
