@@ -1,8 +1,8 @@
-# Blender 3.5.0 MTL File: 'godzilla.blend'
+# Blender 3.5.0 MTL File: 'coffee table.blend'
 # www.blender.org
 
-newmtl Material.001
-Ns 250.000000
+newmtl glass
+Ns 677.994141
 Ka 1.000000 1.000000 1.000000
 Kd 0.800000 0.800000 0.800000
 Ks 0.500000 0.500000 0.500000
@@ -11,12 +11,13 @@ Ni 1.000000
 d 1.000000
 illum 2
 
-newmtl skin
-Ns 250.000000
+newmtl wood
 Ka 1.000000 1.000000 1.000000
-Kd 1.000000 1.000000 1.000000
-Ks 0.500000 0.500000 0.500000
+Ks 0.430818 0.430818 0.430818
 Ke 0.000000 0.000000 0.000000
-Ni 1.000000
+Ni 1.450000
 d 1.000000
 illum 2
+map_Kd Wood050_4K_Color.png
+map_Ns Wood050_4K_Roughness.png
+map_Bump -bm 1.000000 Wood050_4K_NormalDX.png
