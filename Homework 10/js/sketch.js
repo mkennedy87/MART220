@@ -34,12 +34,14 @@ function draw() {
     push();
     scale(1.5);
     rotateZ(180);
+    rotateX(45);
+    //rotateY(45);
     rotateY(frameCount * .5);
-    rotateX(frameCount * .3);
+   // rotateX(frameCount * .3);
    // normalMaterial();
    // model(godzilla);
     normalMaterial(255);
-    translate(0,-100,0);
+   // translate(0,-100,0);
     model(table);
     pop();
 
@@ -67,7 +69,7 @@ function draw() {
   
     push();
    // specularMaterial(0,30,190);
-    translate(50,0,0);
+    translate(250,0,0);
     rotateY(frameCount * .4);
     rotateZ(frameCount * .2);
     noStroke();

@@ -1,4 +1,4 @@
-class shapes{
+class shape{
 
     consctructor(modelObject) {
 
@@ -6,14 +6,14 @@ class shapes{
 
     drawShapes()
     {
-
+        
         push();
         normalMaterial();
         translate(-230,240,0);
         rotateZ(frameCount * .5);
         rotateY(frameCount * .0125)
         texture(prez);
-        torus(100, 25);
+        plane(this.h, this.w);
         model(this.modelObject);
         pop();
     
